@@ -589,16 +589,9 @@ class ProtLigNetParser:
         return atom_features
 
     def visualize_binding_graph(self, output_path: Optional[str] = None):
-    """
-    Visualize the binding graph using NetworkX and matplotlib.
-    Args:
-        output_path: Path to save the visualization
-    Returns:
-        Matplotlib figure
-    """
-    if self.binding_graph is None:
+        if self.binding_graph is None:
         logger.error("Binding graph not created. Run create_binding_graph() first.")
-        return None
+            return None
     
     G = self.binding_graph
     
