@@ -589,14 +589,15 @@ class ProtLigNetParser:
         return atom_features
 
     def visualize_binding_graph(self, output_path: Optional[str] = None):
-        if self.binding_graph is None:
+    if self.binding_graph is None:
         logger.error("Binding graph not created. Run create_binding_graph() first.")
-            return None
+        return None
     
     G = self.binding_graph
     
     # Create figure
     plt.figure(figsize=(12, 10))
+    
     
     # Get node types
     ligand_nodes = [node for node, attrs in G.nodes(data=True) if attrs.get('type') == 'ligand']
